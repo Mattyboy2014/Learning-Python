@@ -1,4 +1,5 @@
 
+
 import glob
 
 import pandas as pd
@@ -25,7 +26,7 @@ frame
 
 frame_a = frame[['Rate_Symbol']] #Using original dataframe(frame) to create a new dataframe(frame_a)
 frame_a['First_Char']= frame['Rate_Symbol'].str.slice(0,1)
-frame_a['Test_Flag'] = np.where(frame['Rate_Symbol'].str.contains('E','A'),1,0)
+frame_a['Test_Flag'] = np.where(frame['Rate_Symbol'].str.contains('E|A',regex=True),1,0)
 
 frame_a
                              
